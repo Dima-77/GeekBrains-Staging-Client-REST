@@ -37,14 +37,14 @@ public class PersonsController {
 
     // Получение всех личностей и их рейтинга по указанному сайту.
 
-    public ArrayList<PersonWithCoincidences> getPersonsOnSite(int site_id) {
+    public PersonWithCoincidences[] getPersonsOnSite(int site_id) {
         RestTemplate restTemplate = new RestTemplate();
         PersonWithCoincidences[] persons;
         persons = restTemplate.getForObject(WEB_SERVICE_URL + "/" + TABLE +
                         "/{site_id}", PersonWithCoincidences[].class,
                 String.valueOf(site_id));
 
-        return new ArrayList<>(Arrays.asList(persons));
+        return persons;
     }
 
     // Получение всех личностей из таблицы persons.

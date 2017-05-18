@@ -1,19 +1,20 @@
 package desktoprestconsumer.view;
 
 import desktoprestconsumer.model.TablesData.PersonTableData;
+import desktoprestconsumer.model.TablesData.RatingTableData;
 
 import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by Dima on 14.05.2017.
+ * Created by Dima on 18.05.2017.
  */
-public class PersonTable extends JPanel {
+public class RatingTable extends JPanel {
 
-    public PersonTable() {
-        super(new GridLayout(1,0));
+    public RatingTable() {
+        super(new GridLayout(1, 0));
 
-        JTable table = new JTable(new PersonTableData());
+        JTable table = new JTable(new RatingTableData());
         table.setPreferredScrollableViewportSize(new Dimension(500, 70));
         table.setFillsViewportHeight(true);
 
@@ -23,5 +24,4 @@ public class PersonTable extends JPanel {
         //Add the scroll pane to this panel.
         add(scrollPane);
     }
-
 }
